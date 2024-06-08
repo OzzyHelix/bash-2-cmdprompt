@@ -1,0 +1,6 @@
+alias dir="$HOME/.scripts/dir.sh"
+. /usr/lib/os-release
+echo "$PRETTY_NAME [Linux kernel: $(uname -r)]"
+echo "(C) Copyright GPL 1.3 2000-2008"
+echo ""
+PROMPT_COMMAND='PS1="${PWD/#$HOME/~}"; PS1="C:${PS1//\//\\\\}> "'
