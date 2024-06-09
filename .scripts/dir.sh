@@ -55,7 +55,7 @@ dir_command() {
 # Main script
 if [ "$#" -eq 0 ]; then
     # No arguments provided, list files in current directory
-    volume_label=$(blkid -s LABEL "$(df -P . | awk 'NR==2 {print $1}' | sed 's/://')")
+    volume_label=$(/sbin/blkid -s LABEL "$(df -P . | awk 'NR==2 {print $1}' | sed 's/://')")
     drive=$(df -P . | awk 'NR==2 {print $6}')
     if [ -z "$volume_label" ]; then
         echo " Volume in drive $drive has no label."
